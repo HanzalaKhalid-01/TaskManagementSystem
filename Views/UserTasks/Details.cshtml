@@ -1,0 +1,82 @@
+﻿@model TaskManagementSystem.Models.UserTask
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="d-none">
+            @Html.DisplayNameFor(model => model.project_id)
+        </dt>
+
+        <dd class="d-none">
+            @Html.DisplayFor(model => model.project_id)
+        </dd>
+
+        <dt class="d-none">
+            @Html.DisplayNameFor(model => model.status_id)
+        </dt>
+
+        <dd class="d-none">
+            @Html.DisplayFor(model => model.status_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.task_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.task_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.due_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.due_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updated_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updated_at)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.task_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

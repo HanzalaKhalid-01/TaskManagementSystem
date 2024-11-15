@@ -25,6 +25,11 @@ namespace TaskManagementSystem
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/Content/datepicker").Include(
+                      "~/Content/datepicker.css",
+                      "~/Scripts/bootstrap-datepicker.min.js"));
+
         }
     }
 }

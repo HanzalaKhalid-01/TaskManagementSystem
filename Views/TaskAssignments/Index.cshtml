@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TaskManagementSystem.Models.TaskAssignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="d-none">
+            @Html.DisplayNameFor(model => model.task_id)
+        </th>
+        <th class="d-none">
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assigned_at)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="d-none">
+            @Html.DisplayFor(modelItem => item.task_id)
+        </td>
+        <td class="d-none">
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assigned_at)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.assignment_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.assignment_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.assignment_id })
+        </td>
+    </tr>
+}
+
+</table>
