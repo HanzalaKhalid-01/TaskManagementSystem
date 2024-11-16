@@ -20,10 +20,10 @@ public class EmailSender
             EnableSsl = true,
             DeliveryMethod = SmtpDeliveryMethod.Network,
             UseDefaultCredentials = false,
-            Credentials = new NetworkCredential("hunainvohra31@gmail.com", "National@123")
+            Credentials = new NetworkCredential("hanzalabinkhalid@gmail.com", "nzrrhknlkscxxvrq")
         };
 
-        using (var message = new MailMessage("hunainvohra31@gmail.com", toEmail)
+        using (var message = new MailMessage("hanzalabinkhalid@gmail.com", toEmail)
         {
             Subject = subject,
             Body = body,
