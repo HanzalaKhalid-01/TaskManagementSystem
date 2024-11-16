@@ -11,7 +11,8 @@ namespace TaskManagementSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UserTask
     {
         public int task_id { get; set; }
@@ -19,6 +20,8 @@ namespace TaskManagementSystem.Models
         public Nullable<int> status_id { get; set; }
         public string task_name { get; set; }
         public string description { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> due_date { get; set; }
         public string priority { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }

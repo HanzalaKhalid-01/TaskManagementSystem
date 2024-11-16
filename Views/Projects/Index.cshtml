@@ -9,8 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table table-striped">
+    <tr class="bg-secondary">
         <th class="d-none">
             @Html.DisplayNameFor(model => model.user_id)
         </th>
@@ -35,7 +35,7 @@
         <th>
             @Html.DisplayNameFor(model => model.updated_at)
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -62,7 +62,8 @@
             @Html.DisplayFor(modelItem => item.created_at)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.updated_at)
+            @item.updated_at?.ToString("yyyy/MM/dd") ?? "N/A"
+            @*@Html.DisplayFor(modelItem => item.updated_at, new { htmlAttributes = new { @class = "date-only" } })*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.project_id }) |

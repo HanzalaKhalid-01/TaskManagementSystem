@@ -17,6 +17,10 @@ namespace TaskManagementSystem.Controllers
         // GET: Projects
         public ActionResult Index()
         {
+            //foreach (var item in db.Projects)
+            //{
+            //    item.updated_at = ;
+            //}
             return View(db.Projects.ToList());
         }
 
@@ -46,10 +50,13 @@ namespace TaskManagementSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "project_id,user_id,project_name,description,start_date,end_date,created_by,created_at,updated_at")] Project project)
+        public ActionResult Create(Project project)
         {
+            //[Bind(Include = "project_id,user_id,project_name,description,start_date,end_date,created_by,created_at,updated_at")]
             if (ModelState.IsValid)
             {
+                project.created_at = DateTime.Now.Date;
+                project.updated_at = DateTime.Now.Date;
                 db.Projects.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");
