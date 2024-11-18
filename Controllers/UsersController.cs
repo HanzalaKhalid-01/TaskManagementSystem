@@ -46,10 +46,13 @@ namespace TaskManagementSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "user_id,username,email,password_hash,created_at,updated_at")] User user)
+        public ActionResult Create(User user)
         {
+            //[Bind(Include = "user_id,username,email,password_hash,created_at,updated_at")]
             if (ModelState.IsValid)
             {
+                user.created_at = DateTime.Now.Date;
+                user.updated_at = DateTime.Now.Date;
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-none">
             @Html.LabelFor(model => model.created_at, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.created_at, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-none">
             @Html.LabelFor(model => model.updated_at, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.updated_at, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })

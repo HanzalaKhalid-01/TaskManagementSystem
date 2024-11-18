@@ -11,10 +11,10 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="d-none">
             @Html.DisplayNameFor(model => model.task_id)
         </th>
-        <th>
+        <th class="d-none">
             @Html.DisplayNameFor(model => model.user_id)
         </th>
         <th>
@@ -28,10 +28,10 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="d-none">
             @Html.DisplayFor(modelItem => item.task_id)
         </td>
-        <td>
+        <td class="d-none">
             @Html.DisplayFor(modelItem => item.user_id)
         </td>
         <td>

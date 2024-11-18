@@ -46,10 +46,12 @@ namespace TaskManagementSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "comment_id,task_id,user_id,comment_text,created_at")] Comment comment)
+        public ActionResult Create(Comment comment)
         {
+            //[Bind(Include = "comment_id,task_id,user_id,comment_text,created_at")]
             if (ModelState.IsValid)
             {
+                comment.created_at = DateTime.Now.Date;
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -9,8 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped">
-    <tr class="bg-secondary">
+<table class="table">
+    <tr>
         <th class="d-none">
             @Html.DisplayNameFor(model => model.user_id)
         </th>
@@ -62,8 +62,7 @@
             @Html.DisplayFor(modelItem => item.created_at)
         </td>
         <td>
-            @item.updated_at?.ToString("yyyy/MM/dd") ?? "N/A"
-            @*@Html.DisplayFor(modelItem => item.updated_at, new { htmlAttributes = new { @class = "date-only" } })*@
+            @Html.DisplayFor(modelItem => item.updated_at)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.project_id }) |
